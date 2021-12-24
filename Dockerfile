@@ -2,8 +2,8 @@ FROM python:3.8-slim-buster
 
 WORKDIR usr/src/app
 # Install all requrements for our app
-COPY requirements.txt requirements.txt 
-RUN pip3 install -r requirements.txt
+
+RUN pip3 install flask pymongo fastapi uvicorn aiofiles gevent libscrc qrcode requests bcrypt
 # Install application
 COPY . . 
 
