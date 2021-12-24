@@ -355,7 +355,7 @@ def register() :
 					return jsonify({
 						"code" : 401,
 						"icon" : "info",
-						"title" : "ชื่อผู้ใช้นี้มีในระบบแล้ว",
+						"title" : "ชื่อผู้ใช้ซ้ำ",
 						"description" : "กรุณาลองใหม่อีกครั้ง"
 					}), 200
 				
