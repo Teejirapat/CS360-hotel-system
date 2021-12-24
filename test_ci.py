@@ -59,7 +59,7 @@ class FlaskAppTests(unittest.TestCase):
               "email":self.config_test["register_pass3"]["email"]} 
         r = self.app.post('/register',
                           data=sent)
-        self.assertEqual(r.json['title'],'ชื่อผู้ใช้นี้มีในระบบแล้ว')
+        self.assertEqual(r.json['title'],'ชื่อผู้ใช้ซ้ำ')
 
     def test_register4(self): #รหัสผ่านไม่ตรงกัน
         sent = {"username":self.config_test["register_pass4"]["username"], "password": self.config_test["register_pass4"]["password"],
