@@ -1,18 +1,13 @@
 FROM python:3.8-slim-buster
 
-# Download updates and install python3, pip and vim
-RUN apt-get update
-RUN apt-get install python3 -y
-RUN apt-get install python3-pip -y
-RUN apt-get install vim -y
-
+WORKDIR usr/src/app
 # Install all requrements for our app
-RUN pip3 install flask pymongo requests bcrypt gevent WSGIServer qrcode libscrc uvicorn fastapi coverage
+COPY requirements.txt requirements.txt 
+RUN pip3 install -r requirements.txt
 # Install application
+COPY . . 
 
-WORKDIR /usr/src/app
-
-COPY . .
+COPY servermain.py ./
 
 
 # Expose container port to outside host
