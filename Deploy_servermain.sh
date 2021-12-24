@@ -9,5 +9,5 @@ sudo service docker start
 sudo gpasswd -a ec2-user docker
 newgrp docker
 
-docker run -dp 3000:3000 6209650651/calc-image
+docker run -dp 8082:8082 6209650651/calc-image
 
