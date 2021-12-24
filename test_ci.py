@@ -2,7 +2,7 @@ import unittest
 import servermain as tested_app
 import json 
 import random
-#TestFucntion
+#TEst
 class FlaskAppTests(unittest.TestCase):
 
     def setUp(self):
@@ -31,8 +31,9 @@ class FlaskAppTests(unittest.TestCase):
 
         import random
         var2 = random.choice(string.ascii_letters)
+        var3 = random.choice(string.ascii_letters)
         var7 = random.choice(string.ascii_letters)
-        self.config_test["register_pass1"]["username"] = var2+var7+var1
+        self.config_test["register_pass1"]["username"] = var2+var7+var1+var3
         sent = {"username":self.config_test["register_pass1"]["username"], "password": self.config_test["register_pass1"]["password"],
         "conpassword":self.config_test["register_pass1"]["conpassword"],"firstname":self.config_test["register_pass1"]["firstname"],
               "lastname":self.config_test["register_pass1"]["lastname"],"gender":self.config_test["register_pass1"]["gender"],
@@ -112,7 +113,7 @@ class FlaskAppTests(unittest.TestCase):
         "password":self.config_test["edit_profile2"]["password"],
         "conpassword":self.config_test["edit_profile2"]["conpassword"]}
         r = self.app.post('/profile',data = sent)
-        self.assertEqual(r.json["data"]["title"],'สำเร็จ')
+        self.assertEqual(r.json["data"]["description"],'ระบบได้ทำการแก้ไขข้อมูลแล้ว')
         
         sent = {"action":self.config_test["edit_profile2"]["action"],
         "password":self.config_test["register_pass1"]["password"],
