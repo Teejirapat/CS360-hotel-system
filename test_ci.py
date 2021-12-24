@@ -100,7 +100,7 @@ class FlaskAppTests(unittest.TestCase):
         "password":self.config_test["register_pass5"]["password"],
         "conpassword":self.config_test["register_pass5"]["conpassword"]}
         r = self.app.post('/profile',data = sent)
-        self.assertEqual(r.json["data"]["description"],'กรุณาลองใหม่อีกครั้ง')
+        self.assertEqual(r.json["data"]["title"],'รหัสผ่านไม่ตรงกัน')
     
     def test_edit_profile_pass2(self): #เปลี่ยนรหัสผ่าน
         
