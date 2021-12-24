@@ -1,0 +1,10 @@
+flask 
+pymongo 
+fastapi 
+uvicorn 
+aiofiles 
+gevent 
+libscrc 
+qrcode 
+requests 
+bcrypt 
