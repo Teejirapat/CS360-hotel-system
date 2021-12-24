@@ -1,6 +1,5 @@
-FROM node:16
+FROM python:3.8-slim-buster
 
 
-COPY Deploy_servermain.sh /Deploy_servermain.sh
-RUN chmod +x /Deploy_servermain.sh
-ENTRYPOINT ["/Deploy_servermain.sh"]
+RUN pip3 install flask pymongo requests bcrypt gevent WSGIServer qrcode libscrc
+CMD ["python3","flask","run","--host=0.0.0.0"]
