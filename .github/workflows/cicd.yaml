@@ -48,7 +48,7 @@ jobs:
        uses: docker/build-push-action@v2
        with:
         push: true
-        tags: flimcharun13/cs360-cicd-image:latest
+        tags: 6209650651/calc-image:latest
     
      - name: Configure AWS credentials
        if: success()
